@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>projekt.Mykyta.PEPE.Vertylo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="box">
+    <h1>projekt.Mykyta.PEPE.Vertylo</h1>
+    <div class="info">Projekt edukacyjny – analiza stylu życia</div>
+
+    <form method="post">
+        <label>Wiek</label>
+        <input type="number" name="wiek" required>
+
+        <label>Godziny snu</label>
+        <input type="number" name="sen" required>
+
+        <label>Poziom stresu (1–10)</label>
+        <input type="number" name="stres" min="1" max="10" required>
+
+        <button type="submit">Analizuj</button>
+    </form>
+
+    {% if wynik1 %}
+    <div class="wyniki">
+        <div class="karta">
+            <h3>Model 1</h3>
+            <p>{{ wynik1 }}</p>
+        </div>
+        <div class="karta">
+            <h3>Model 2</h3>
+            <p>{{ wynik2 }}</p>
+        </div>
+    </div>
+
+    <p class="podsumowanie"><b>{{ podsumowanie }}</b></p>
+    {% endif %}
+
+    <div class="footer">
+        projekt.Mykyta.PEPE.Vertylo · Python · Flask
+    </div>
+</div>
+
+</body>
+</html>
