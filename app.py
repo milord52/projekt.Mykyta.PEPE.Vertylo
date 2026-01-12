@@ -36,18 +36,20 @@ def start():
             punkty += 1
 
         if punkty >= 4:
-            wynik2 = f"Dobry stan zdrowia (wynik: {punkty})"
+            wynik2 = f"Dobry stan zdrowia (wynik {punkty})"
         elif punkty >= 2:
-            wynik2 = f"Średni stan zdrowia (wynik: {punkty})"
+            wynik2 = f"Średni stan zdrowia (wynik {punkty})"
         else:
-            wynik2 = f"Zły stan zdrowia (wynik: {punkty})"
+            wynik2 = f"Zły stan zdrowia (wynik {punkty})"
 
         if "Dobry" in wynik1 and "Dobry" in wynik2:
             podsumowanie = "Twój styl życia wygląda na zdrowy."
+        elif "Średni" in wynik1 and "Średni" in wynik2:
+            podsumowanie = "Twój styl życia jest przeciętny – możliwa poprawa."
         elif "Zły" in wynik1 and "Zły" in wynik2:
             podsumowanie = "Warto zwrócić uwagę na sen i poziom stresu."
         else:
-            podsumowanie = "Wyniki są mieszane – możliwa poprawa nawyków."
+            podsumowanie = "Wyniki są mieszane – modele wskazują różne oceny."
 
     return render_template(
         "index.html",
